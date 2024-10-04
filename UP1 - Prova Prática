@@ -1,0 +1,85 @@
+Questão 1: Faça um Programa que peça o raio de um círculo, calcule e mostre sua área.
+
+import java.util.Scanner;
+
+public class leitura {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        
+        System.out.print("Digite o raio do círculo: ");
+        double raio = scanner.nextDouble();
+        
+        double area = Math.PI * Math.pow(raio, 2);
+        
+        System.out.printf("A área do círculo com raio %.2f é: %.2f%n", raio, area);
+        
+        scanner.close();
+    }
+}
+
+
+Questão 3: Faça um Programa que peça um valor e mostre na tela se o valor é positivo ou negativo.
+
+import java.util.Scanner;
+
+public class leitura {
+    public static void main(String[] args) {
+        
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Digite um valor: ");
+        double valor = scanner.nextDouble();
+
+        if (valor > 0) {
+            System.out.println("O valor é positivo.");
+        } else if (valor < 0) {
+            System.out.println("O valor é negativo.");
+        } else {
+            System.out.println("O valor é zero.");
+        }
+
+        scanner.close();
+    }
+}
+
+
+Questão 5: Estrutura de condição e repetição nos ajuda a obter algumas vantagens. Elaborar um programa que efetue a leitura de valores positivos inteiros até que um valor negativo seja informado. Ao final, devem ser apresentados o menor e o maior valores informados pelo usuário.
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        int maior = Integer.MIN_VALUE;
+        int menor = Integer.MAX_VALUE;
+        int valor;
+
+        System.out.println("Digite valores inteiros positivos (digite um valor negativo para encerrar):");
+
+        while (true) {
+            valor = scanner.nextInt();
+
+            if (valor < 0) {
+                break;
+            }
+
+            if (valor > maior) {
+                maior = valor;
+            }
+            if (valor < menor) {
+                menor = valor;
+            }
+        }
+
+        if (maior != Integer.MIN_VALUE && menor != Integer.MAX_VALUE) {
+            System.out.println("Maior valor informado: " + maior);
+            System.out.println("Menor valor informado: " + menor);
+        } else {
+            System.out.println("Nenhum valor positivo foi informado.");
+        }
+
+        scanner.close();
+    }
+}
+
